@@ -126,9 +126,9 @@ export function toMatchImageSnapshot(
     // Create the path to store the snapshots in.
     mkdirp(path.dirname(snapshotPath));
     // The image did not yet exist.
-    // tslint:disable-next-line:no-console
-    console.log("updateSnapshot",_updateSnapshot);
     if (!existsSync(snapshotPath)) {
+        // tslint:disable-next-line:no-console
+        console.log("updateSnapshot",_updateSnapshot);
         // If the user specified `-u`, or was running in interactive mode, write the new
         // snapshot to disk and let the test pass.
         if (_updateSnapshot === "new" || _updateSnapshot === "all") {
