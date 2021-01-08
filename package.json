@@ -20,6 +20,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig-production.json --sourceMap",
+    "prepare": "npm run-script build",
     "test": "jest -i",
     "lint": "tslint --format stylish --type-check --project tsconfig.json",
     "clean": "rm -rf dist",
