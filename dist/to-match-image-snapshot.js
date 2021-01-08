@@ -116,11 +116,9 @@ function toMatchImageSnapshot(received, configuration, parameters = {}) {
     mkdirp_1.sync(path.dirname(snapshotPath));
     // The image did not yet exist.
     if (!fs_1.existsSync(snapshotPath)) {
-        // tslint:disable-next-line:no-console
-        console.log("updateSnapshot", _updateSnapshot);
         // If the user specified `-u`, or was running in interactive mode, write the new
         // snapshot to disk and let the test pass.
-        if (_updateSnapshot === "new" || _updateSnapshot === "all") {
+        if (_updateSnapshot === "new" || _updateSnapshot === "all" || _updateSnapshot === "none") {
             snapshotState.added++;
             fs_1.writeFileSync(snapshotPath, received);
             return { pass: true };
