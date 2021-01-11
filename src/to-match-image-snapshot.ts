@@ -163,7 +163,7 @@ export function toMatchImageSnapshot(
         changedPixels,
     } = checkImages(snapshotImage, receivedImage, snapshotNumber, configuration);
     if (!pass) {
-        if (_updateSnapshot === "all") {
+        if (_updateSnapshot === "all" || _updateSnapshot === "none") {
             snapshotState.updated++;
             writeFileSync(snapshotPath, received);
             return { pass: true };
